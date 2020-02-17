@@ -1,27 +1,29 @@
-import React, { useContext } from "react";
-import { Container, Card } from 'react-bootstrap';
+import React from "react";
+import { Container, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "../styles/ProductCard.scss";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  return (
+    <Container>
+      <Link to={`/${product.id}`} className="product-link">
+        <Card border="secondary" className="product-card">
+          <Card.Img variant="top" src={product.thumbnail} />
+          <Card.Body>
+            <Card.Text>
+              <p>{product.brand}</p>
+              <p className="title">{product.name}</p>
+              <hr className="line"></hr>
+              <p className="price">
+                <span>Price: ${product.price}</span>
+              </p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Link>
 
-	return (
-		<Container>
-			<Card border="secondary" className="product-card">
-				<Card.Img variant="top"
-					src=""/>
-				<Card.Body>
-					<Card.Text>
-						<p className="title"></p>
-						<hr className="line"></hr>
-						<p className="description"
-							// style={{ display: product.description ? 'block' : 'none' }}
-						><span>Description:</span></p>
-						<p className="price"><span>Price:</span></p>
-						<p className="sizes">Sizes:</p>
-					</Card.Text>
-				</Card.Body>
-			</Card>
-			<br></br>
-		</Container>
-	)
-}
+      <br></br>
+    </Container>
+  );
+};
 export default ProductCard;

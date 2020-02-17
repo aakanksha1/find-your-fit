@@ -1,0 +1,35 @@
+[debug] [2020-02-17T15:58:27.935Z] ----------------------------------------------------------------------
+[debug] [2020-02-17T15:58:27.936Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2020-02-17T15:58:27.936Z] CLI Version:   7.12.1
+[debug] [2020-02-17T15:58:27.936Z] Platform:      darwin
+[debug] [2020-02-17T15:58:27.936Z] Node Version:  v10.16.3
+[debug] [2020-02-17T15:58:27.937Z] Time:          Mon Feb 17 2020 09:58:27 GMT-0600 (Central Standard Time)
+[debug] [2020-02-17T15:58:27.937Z] ----------------------------------------------------------------------
+[debug] [2020-02-17T15:58:27.937Z] 
+[debug] [2020-02-17T15:58:27.948Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-17T15:58:27.948Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/joo/Documents/rinse-repeat
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-02-17T15:58:38.477Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-17T15:58:38.477Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-17T15:58:38.652Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-17T15:58:38.667Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-02-17T15:58:39.376Z] <<< HTTP RESPONSE 200
