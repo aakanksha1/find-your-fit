@@ -2,3 +2,27 @@
   text-decoration: none;
   color: black;
 }
+
+.product-card {
+  max-height: 100%;
+}
+
+.title {
+  display: inline !important;
+}
+
+.product-img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px) {
+    .product-img {
+      width: 100%;
+      height: 50vw;
+      object-fit: cover;
+    }
+  }
