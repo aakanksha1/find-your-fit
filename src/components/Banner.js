@@ -8,7 +8,9 @@ const Banner = () => {
   return (
     <Navbar bg="dark" variant="dark" className="navigation-bar" sticky="top">
       <Navbar.Brand className="home">
-        <Link to="/">Shopping Cart</Link>
+        <Link to="/">
+          <h2>rinse. repeat.</h2>
+        </Link>
       </Navbar.Brand>
       <Nav className="ml-auto"></Nav>
     </Navbar>
