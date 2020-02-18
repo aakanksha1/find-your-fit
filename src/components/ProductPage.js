@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { db } from "../App";
 import { useParams } from "react-router-dom";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -29,6 +29,8 @@ const ProductPage = () => {
             </p>
             <p className="description">Description: {product.description}</p>
           </Card.Text>
+          <Button variant="secondary">Try</Button>
+          <Button>Buy</Button>
         </Card.Body>
       </Card>
 
