@@ -1,7 +1,12 @@
 import React from "react";
+
+//component imports
 import Banner from "./components/Banner";
 import ProductList from "./components/ProductList";
 import ProductPage from "./components/ProductPage";
+import Footer from "./components/Footer";
+
+//firebase imports
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -35,6 +40,7 @@ function App() {
         <Route path="/" exact component={ProductList} />
         <Route path="/:id" component={ProductPage} />
       </Switch>
+      <Footer/>
     </Router>
   );
 }
