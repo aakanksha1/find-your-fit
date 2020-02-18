@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../App";
 import { useParams } from "react-router-dom";
+import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import "../styles/ProductPage.scss";
-import { Container, Card, Row, Col } from "react-bootstrap";
-
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -17,11 +16,11 @@ const ProductPage = () => {
     .catch(function (error) {
       console.log("Error getting documents: ", error);
     });
+  
   return (
     <Container>
       <Row className="product-page">
         <Col xs={12} sm={12} md={{ span: 6, offset: 3 }} lg={{ span: 6, offset: 3 }}>
-
           <Card border="secondary" className="product-page-card">
             <Card.Img variant="top" src={product.thumbnail} />
             <Card.Body>
@@ -34,9 +33,10 @@ const ProductPage = () => {
                 </p>
                 <p className="info-description">Description: {product.description}</p>
               </Card.Text>
+              <Button variant="secondary">Try</Button>
+              <Button>Buy</Button>
             </Card.Body>
           </Card>
-
           <br></br>
         </Col>
       </Row>
