@@ -1,3 +1,22 @@
 .info-title {
-    display:inline;
+  display: inline;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .try-button {
+    background-color: darkgrey !important;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    width: 150px;
+    border-style: outset;
+    border: 1px solid black;
+  }
+  .try-button :hover {
+    filter: brightness(200%) !important;
+  }
 }
