@@ -27,7 +27,7 @@ const ProductPage = () => {
           lg={{ span: 6, offset: 3 }}
         >
           <Card border="secondary" className="product-page-card">
-            <Card.Img variant="top" src={product.thumbnail} />
+            <Card.Img variant="top" className="img" src={product.thumbnail} />
             <Card.Body>
               <Card.Text>
                 <p>
