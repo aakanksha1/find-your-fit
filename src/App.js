@@ -13,6 +13,7 @@ import "firebase/firestore";
 
 //react + css
 import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
 import "./styles/App.scss";
 
 //router
@@ -40,7 +41,7 @@ function App() {
         <Route path="/" exact component={ProductList} />
         <Route path="/:id" component={ProductPage} />
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
