@@ -10,6 +10,7 @@ const ProductList = () => {
 
   useEffect(() => {
     db.collection("items")
+
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc =>
@@ -26,7 +27,7 @@ const ProductList = () => {
     <Container className="product-container">
       <Row>
         <Col md={3}>
-          <Filter />
+          <Filter productsArr={productsArr} setProducts={setProducts} />
         </Col>
         <Col md={9}>
           <Row className="product-list">
