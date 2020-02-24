@@ -17,10 +17,10 @@ const ProductCard = ({ product }) => {
             <Card.Text>
               <p>{product.brand}</p>
               <p className="title">{product.name}</p>
-              <hr className="line"></hr>
               <p className="price">
                 <span>Price: ${product.price}</span>
               </p>
+              <hr className="line"></hr>
             </Card.Text>
           </Card.Body>
         </Card>
