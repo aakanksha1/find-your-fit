@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../App";
 import { useParams } from "react-router-dom";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col } from "react-bootstrap";
 import "../styles/ProductPage.scss";
 
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  db.collection("items")
-    .doc(id)
-    .get()
-    .then(snapShot => {
-      setProduct(snapShot.data());
-    })
-    .catch(function(error) {
-      console.log("Error getting documents: ", error);
-    });
+
+  useEffect(() => {
+    db.collection("items")
+      .doc(id)
+      .get()
+      .then(snapShot => {
+        setProduct(snapShot.data());
+      })
+      .catch(function(error) {
+        console.log("Error getting documents: ", error);
+      });
+  }, [id]);
 
   return (
     <Container>
