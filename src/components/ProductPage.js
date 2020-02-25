@@ -15,10 +15,10 @@ const ProductPage = () => {
       .then(snapShot => {
         setProduct(snapShot.data());
       })
-      .catch(function(error) {
+      .catch(error => {
         console.log("Error getting documents: ", error);
       });
-  }, [id]);
+  }, []);
 
   return (
     <Container>
