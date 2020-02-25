@@ -15,14 +15,14 @@ const Filter = () => {
         }
         expandIconPosition="right"
       >
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Brands" key="1">
+        <Panel className="filter-panel" header="Brands" key="1">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
               <div key={brand}>{brand}</div>
             )
           )}
         </Panel>
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Apparel" key="2">
+        <Panel className="filter-panel" header="Apparel" key="2">
           <Row>
             <Col md={6}>
               <h3>Tops</h3>
@@ -43,7 +43,7 @@ const Filter = () => {
             </Col>
           </Row>
         </Panel>
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Size" key="3">
+        <Panel className="filter-panel" header="Size" key="3">
           <div>{"XS (26 - 28)"}</div>
           <div>{"S  (28 - 30)"}</div>
           <div>{"M  (30 - 32)"}</div>
@@ -51,10 +51,7 @@ const Filter = () => {
           <div>{"XL (34 - 36)"}</div>
         </Panel>
       </Collapse>
-      <Button
-        style={{ marginTop: "20px", float: "right" }}
-        variant="outline-dark"
-      >
+      <Button id="view-filter-results" variant="outline-dark">
         View Results
       </Button>
     </Container>
