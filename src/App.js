@@ -5,6 +5,7 @@ import Banner from "./components/Banner";
 import ProductList from "./components/ProductList";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
+import CheckoutPage from "./components/CheckoutPage";
 
 //firebase imports
 import firebase from "firebase/app";
@@ -39,7 +40,8 @@ function App() {
       <Banner />
       <Switch>
         <Route path="/" exact component={ProductList} />
-        <Route path="/:id" component={ProductPage} />
+        <Route path="/checkout" exact component={CheckoutPage} />
+        <Route path="/:id" exact component={ProductPage} />
       </Switch>
       <Footer />
     </Router>
