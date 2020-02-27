@@ -55,7 +55,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
               <h3>Tops</h3>
               {["Base Layer", "Short Sleeve", "Long Sleeve", "Outerwear"].map(
                 type => (
-                  <a onClick={() => setApparelFilter("type")} key={type}>
+                  <a onClick={() => setApparelFilter("T" + type)} key={type}>
                     {type}
                   </a>
                 )
@@ -64,7 +64,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
             <Col md={6}>
               <h3>Bottoms</h3>
               {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
-                <a onClick={() => setSizeFilter("type")} key={type}>
+                <a onClick={() => setApparelFilter("B" + type)} key={type}>
                   {type}
                 </a>
               ))}
