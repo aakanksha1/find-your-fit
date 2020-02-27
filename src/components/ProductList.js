@@ -36,13 +36,25 @@ const ProductList = () => {
           />
         </Col>
         <Col md={9}>
-          <Row className="product-list">
-            {products.map(product => (
-              <Col xs={12} sm={12} md={4} lg={4}>
-                <ProductCard product={product} />
-              </Col>
-            ))}
-          </Row>
+          {products.length < 1 ? (
+            <p
+              style={{
+                fontSize: "15px",
+                textAlign: "center",
+                paddingTop: "40px"
+              }}
+            >
+              There are no matches. Try another filter!
+            </p>
+          ) : (
+            <Row className="product-list">
+              {products.map(product => (
+                <Col xs={12} sm={12} md={4} lg={4}>
+                  <ProductCard product={product} />
+                </Col>
+              ))}
+            </Row>
+          )}
         </Col>
       </Row>
     </Container>

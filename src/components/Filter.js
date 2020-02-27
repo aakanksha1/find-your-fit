@@ -15,26 +15,27 @@ const Filter = ({ allProducts, setProducts, products }) => {
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.brand === brandFilter);
+      let holder = allProducts.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
       console.log("brand:" + brandFilter);
       console.log("productsforbrand" + products);
-    } else if (apparelFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+    }
+    if (apparelFilter.length > 1) {
+      let holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
       console.log("apparel:" + apparelFilter);
       console.log("productsfora" + products);
-    } else if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
-      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+    }
+    if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
+      let holder = allProducts.filter(obj => obj.type === apparelFilter);
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
     }
-    /*
-    if (sizeFilter.length() > 1 ){
-      var holder = allProducts.filter(obj => obj.brand === );
-      setProducts(holder);  
-    }
-    */
+    // if (sizeFilter.length >= 1) {
+    //   let holder = allProducts.filter((product) => {
+    //     const product =
+    //   });
+    // }
   };
 
   return (
