@@ -6,16 +6,19 @@ import { db } from "../App";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const productsArr = [];
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     db.collection("items")
+
       .get()
       .then(querySnapshot => {
+        const productArr = [];
         querySnapshot.forEach(doc =>
-          productsArr.push({ id: doc.id, ...doc.data() })
+          productArr.push({ id: doc.id, ...doc.data() })
         );
-        setProducts(productsArr);
+        setAllProducts(productArr);
+        setProducts(productArr);
       })
       .catch(error => {
         console.log("Error getting documents: ", error);
@@ -26,7 +29,11 @@ const ProductList = () => {
     <Container className="product-container">
       <Row>
         <Col md={3}>
-          <Filter />
+          <Filter
+            allProducts={allProducts}
+            setProducts={setProducts}
+            products={products}
+          />
         </Col>
         <Col md={9}>
           <Row className="product-list">
