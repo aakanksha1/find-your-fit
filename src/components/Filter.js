@@ -43,9 +43,15 @@ const Filter = ({ allProducts, setProducts, products }) => {
         <Panel className="filter-panel" header="Brands" key="1">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
-              <a onClick={() => setBrandFilter(brand)} key={brand}>
-                {brand}
-              </a>
+              <div>
+                <a
+                  className="red"
+                  onClick={() => setBrandFilter(brand)}
+                  key={brand}
+                >
+                  {brand}
+                </a>
+              </div>
             )
           )}
         </Panel>
@@ -55,28 +61,60 @@ const Filter = ({ allProducts, setProducts, products }) => {
               <h3>Tops</h3>
               {["Base Layer", "Short Sleeve", "Long Sleeve", "Outerwear"].map(
                 type => (
-                  <a onClick={() => setApparelFilter("T" + type)} key={type}>
-                    {type}
-                  </a>
+                  <div>
+                    <a
+                      className="red"
+                      onClick={() => setApparelFilter("T" + type)}
+                      key={type}
+                    >
+                      {type}
+                    </a>
+                  </div>
                 )
               )}
             </Col>
             <Col md={6}>
               <h3>Bottoms</h3>
               {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
-                <a onClick={() => setApparelFilter("B" + type)} key={type}>
-                  {type}
-                </a>
+                <div>
+                  <a
+                    className="red"
+                    onClick={() => setApparelFilter("B" + type)}
+                    key={type}
+                  >
+                    {type}
+                  </a>
+                </div>
               ))}
             </Col>
           </Row>
         </Panel>
         <Panel className="filter-panel" header="Size" key="3">
-          <a onClick={() => setSizeFilter("XS")}>{"XS (26 - 28)"}</a>
-          <a onClick={() => setSizeFilter("S")}>{"S  (28 - 30)"}</a>
-          <a onClick={() => setSizeFilter("M")}>{"M  (30 - 32)"}</a>
-          <a onClick={() => setSizeFilter("L")}>{"L  (32 - 34)"}</a>
-          <a onClick={() => setSizeFilter("XL")}>{"XL (34 - 36)"}</a>
+          <div>
+            <a className="red" onClick={() => setSizeFilter("XS")}>
+              {"XS (26 - 28)"}
+            </a>
+          </div>
+          <div className="red">
+            <a className="red" onClick={() => setSizeFilter("S")}>
+              {"S  (28 - 30)"}
+            </a>
+          </div>
+          <div className="red">
+            <a className="red" onClick={() => setSizeFilter("M")}>
+              {"M  (30 - 32)"}
+            </a>
+          </div>
+          <div className="red">
+            <a className="red" onClick={() => setSizeFilter("L")}>
+              {"L  (32 - 34)"}
+            </a>
+          </div>
+          <div className="red">
+            <a className="red" onClick={() => setSizeFilter("XL")}>
+              {"XL (34 - 36)"}
+            </a>
+          </div>
         </Panel>
       </Collapse>
       <Button
