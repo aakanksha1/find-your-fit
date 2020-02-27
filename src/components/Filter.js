@@ -9,9 +9,19 @@ const Filter = ({ allProducts, setProducts, products }) => {
   const [apparelFilter, setApparelFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
 
-  // href tag on the divs for each w/ onClick set the state of the filter
-  // give div value property and
-  //filter.brandFilter)
+  const sizeAvaliable = product => {
+    console.log(product.colors);
+    for (var color in product.colors) {
+      console.log(Object.entries(color));
+      var holder = Object.entries(color).sizes.filter(
+        obj => obj.sizeFilter > 0
+      );
+      if (holder.length > 1) {
+        // that there is a size for this product
+        return holder;
+      }
+    }
+  };
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
