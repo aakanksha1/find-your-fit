@@ -6,18 +6,28 @@ const { Panel } = Collapse;
 
 const Filter = ({ allProducts, setProducts, products }) => {
   const [brandFilter, setBrandFilter] = useState("");
-  const [apparelFilter, setApparelFiter] = useState("");
+  const [apparelFilter, setApparelFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
 
-  // filter through productArr and setProducts after
   // href tag on the divs for each w/ onClick set the state of the filter
   // give div value property and
   //filter.brandFilter)
 
   const viewProducts = () => {
-    var holder = allProducts.filter(obj => obj.brand === "Lululemon");
-    setProducts(holder);
-    console.log(holder);
+    if (brandFilter.length > 1) {
+      var holder = allProducts.filter(obj => obj.brand === brandFilter);
+      setProducts(holder);
+    }
+    if (apparelFilter.length > 1) {
+      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+      setProducts(holder);
+    }
+    /*
+    if (sizeFilter.length() > 1 ){
+      var holder = allProducts.filter(obj => obj.brand === );
+      setProducts(holder);  
+    }
+    */
   };
 
   return (
@@ -33,7 +43,9 @@ const Filter = ({ allProducts, setProducts, products }) => {
         <Panel className="filter-panel" header="Brands" key="1">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
-              <div key={brand}>{brand}</div>
+              <a onClick={() => setBrandFilter(brand)} key={brand}>
+                {brand}
+              </a>
             )
           )}
         </Panel>
@@ -41,29 +53,30 @@ const Filter = ({ allProducts, setProducts, products }) => {
           <Row>
             <Col md={6}>
               <h3>Tops</h3>
-              {[
-                "Base Layers",
-                "Short Sleeves",
-                "Long Sleeves",
-                "Outerwear"
-              ].map(type => (
-                <div key={type}>{type}</div>
-              ))}
+              {["Base Layer", "Short Sleeve", "Long Sleeve", "Outerwear"].map(
+                type => (
+                  <a onClick={() => setApparelFilter("type")} key={type}>
+                    {type}
+                  </a>
+                )
+              )}
             </Col>
             <Col md={6}>
               <h3>Bottoms</h3>
               {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
-                <div key={type}>{type}</div>
+                <a onClick={() => setSizeFilter("type")} key={type}>
+                  {type}
+                </a>
               ))}
             </Col>
           </Row>
         </Panel>
         <Panel className="filter-panel" header="Size" key="3">
-          <div>{"XS (26 - 28)"}</div>
-          <div>{"S  (28 - 30)"}</div>
-          <div>{"M  (30 - 32)"}</div>
-          <div>{"L  (32 - 34)"}</div>
-          <div>{"XL (34 - 36)"}</div>
+          <a onClick={() => setSizeFilter("XS")}>{"XS (26 - 28)"}</a>
+          <a onClick={() => setSizeFilter("S")}>{"S  (28 - 30)"}</a>
+          <a onClick={() => setSizeFilter("M")}>{"M  (30 - 32)"}</a>
+          <a onClick={() => setSizeFilter("L")}>{"L  (32 - 34)"}</a>
+          <a onClick={() => setSizeFilter("XL")}>{"XL (34 - 36)"}</a>
         </Panel>
       </Collapse>
       <Button
