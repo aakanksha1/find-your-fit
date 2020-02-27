@@ -15,14 +15,22 @@ const Filter = ({ allProducts, setProducts, products }) => {
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
-      var holder = products.filter(obj => obj.brand === brandFilter);
+      var holder = allProducts.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
       console.log("brand:" + brandFilter);
+      console.log("productsforbrand" + products);
     }
     if (apparelFilter.length > 1) {
-      var holder = products.filter(obj => obj.type === apparelFilter);
+      var holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
       console.log("apparel:" + apparelFilter);
+      console.log("productsfora" + products);
+    }
+
+    if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
+      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+      holder = holder.filter(obj => obj.brand === brandFilter);
+      setProducts(holder);
     }
     /*
     if (sizeFilter.length() > 1 ){
