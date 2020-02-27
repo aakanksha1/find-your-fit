@@ -19,15 +19,12 @@ const Filter = ({ allProducts, setProducts, products }) => {
       setProducts(holder);
       console.log("brand:" + brandFilter);
       console.log("productsforbrand" + products);
-    }
-    if (apparelFilter.length > 1) {
+    } else if (apparelFilter.length > 1) {
       var holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
       console.log("apparel:" + apparelFilter);
       console.log("productsfora" + products);
-    }
-
-    if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
+    } else if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
       var holder = allProducts.filter(obj => obj.type === apparelFilter);
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
@@ -55,8 +52,12 @@ const Filter = ({ allProducts, setProducts, products }) => {
             brand => (
               <div>
                 <a
-                  className="red"
-                  onClick={() => setBrandFilter(brand)}
+                  className={brandFilter === brand ? "red" : null}
+                  onClick={() => {
+                    brandFilter === brand
+                      ? setBrandFilter("")
+                      : setBrandFilter(brand);
+                  }}
                   key={brand}
                 >
                   {brand}
@@ -73,8 +74,12 @@ const Filter = ({ allProducts, setProducts, products }) => {
                 type => (
                   <div>
                     <a
-                      className="red"
-                      onClick={() => setApparelFilter("T" + type)}
+                      className={apparelFilter === `T${type}` ? "red" : null}
+                      onClick={() => {
+                        apparelFilter === `T${type}`
+                          ? setApparelFilter("")
+                          : setApparelFilter("T" + type);
+                      }}
                       key={type}
                     >
                       {type}
@@ -88,8 +93,12 @@ const Filter = ({ allProducts, setProducts, products }) => {
               {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
                 <div>
                   <a
-                    className="red"
-                    onClick={() => setApparelFilter("B" + type)}
+                    className={apparelFilter === `B${type}` ? "red" : null}
+                    onClick={() => {
+                      apparelFilter === `B${type}`
+                        ? setApparelFilter("")
+                        : setApparelFilter("B" + type);
+                    }}
                     key={type}
                   >
                     {type}
@@ -101,27 +110,52 @@ const Filter = ({ allProducts, setProducts, products }) => {
         </Panel>
         <Panel className="filter-panel" header="Size" key="3">
           <div>
-            <a className="red" onClick={() => setSizeFilter("XS")}>
+            <a
+              className={sizeFilter === "XS" ? "red" : null}
+              onClick={() => {
+                sizeFilter === "XS" ? setSizeFilter("") : setSizeFilter("XS");
+              }}
+            >
               {"XS (26 - 28)"}
             </a>
           </div>
-          <div className="red">
-            <a className="red" onClick={() => setSizeFilter("S")}>
+          <div>
+            <a
+              className={sizeFilter === "S" ? "red" : null}
+              onClick={() => {
+                sizeFilter === "S" ? setSizeFilter("") : setSizeFilter("S");
+              }}
+            >
               {"S  (28 - 30)"}
             </a>
           </div>
-          <div className="red">
-            <a className="red" onClick={() => setSizeFilter("M")}>
+          <div>
+            <a
+              className={sizeFilter === "M" ? "red" : null}
+              onClick={() => {
+                sizeFilter === "M" ? setSizeFilter("") : setSizeFilter("M");
+              }}
+            >
               {"M  (30 - 32)"}
             </a>
           </div>
-          <div className="red">
-            <a className="red" onClick={() => setSizeFilter("L")}>
+          <div>
+            <a
+              className={sizeFilter === "L" ? "red" : null}
+              onClick={() => {
+                sizeFilter === "L" ? setSizeFilter("") : setSizeFilter("L");
+              }}
+            >
               {"L  (32 - 34)"}
             </a>
           </div>
-          <div className="red">
-            <a className="red" onClick={() => setSizeFilter("XL")}>
+          <div>
+            <a
+              className={sizeFilter === "XL" ? "red" : null}
+              onClick={() => {
+                sizeFilter === "XL" ? setSizeFilter("") : setSizeFilter("XL");
+              }}
+            >
               {"XL (34 - 36)"}
             </a>
           </div>

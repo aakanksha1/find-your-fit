@@ -2,20 +2,16 @@
   font-size: 20px;
   font-weight: 500;
 }
-
 .filter-panel {
   background-color: #ffffff;
 }
-
 #view-filter-results {
   margin: 20px 0px;
   float: right;
 }
-
 .red:hover {
   color: red !important;
 }
-
 .red {
   color: red !important;
   text-decoration: underline !important;
