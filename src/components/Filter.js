@@ -9,35 +9,36 @@ const Filter = ({ allProducts, setProducts, products }) => {
   const [apparelFilter, setApparelFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
 
-  // href tag on the divs for each w/ onClick set the state of the filter
-  // give div value property and
-  //filter.brandFilter)
+  const sizeAvaliable = product => {
+    console.log(product.colors);
+    for (var color in product.colors) {
+      console.log(Object.entries(color));
+      var holder = Object.entries(color).sizes.filter(
+        obj => obj.sizeFilter > 0
+      );
+      if (holder.length > 1) {
+        // that there is a size for this product
+        return holder;
+      }
+    }
+  };
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
       var holder = allProducts.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
-      console.log("brand:" + brandFilter);
-      console.log("productsforbrand" + products);
-    }
-    if (apparelFilter.length > 1) {
+    } else if (apparelFilter.length > 1) {
       var holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
-      console.log("apparel:" + apparelFilter);
-      console.log("productsfora" + products);
-    }
-
-    if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
+    } else if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
       var holder = allProducts.filter(obj => obj.type === apparelFilter);
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
+    } else if (sizeFilter.length >= 1) {
+      console.log("help");
+      var holderArr = allProducts.map(product => sizeAvaliable(product));
+      console.log(holderArr);
     }
-    /*
-    if (sizeFilter.length() > 1 ){
-      var holder = allProducts.filter(obj => obj.brand === );
-      setProducts(holder);  
-    }
-    */
   };
 
   return (
@@ -54,13 +55,13 @@ const Filter = ({ allProducts, setProducts, products }) => {
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
               <div>
-                <a
+                <li
                   className="red"
                   onClick={() => setBrandFilter(brand)}
                   key={brand}
                 >
                   {brand}
-                </a>
+                </li>
               </div>
             )
           )}
