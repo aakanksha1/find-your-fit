@@ -77,14 +77,21 @@ const ProductPage = () => {
               <Card.Text>
                 <hr className="line"></hr>
                 <p className="info-price">
-                  <span>Price: ${product.price}</span>
+                  <span>
+                    <strong>Price:</strong> ${product.price}
+                  </span>
                 </p>
                 <p className="info-description">
-                  Description: <br></br>
+                  <strong>Description: </strong> <br></br>
                   {product.description}
                 </p>
                 <p>
-                  Learn more about our Trial Program:<br></br>
+                  <strong>Learn more about our Trial Program:</strong>
+                  <br></br> Find Your Fit allows athletes to try speciality
+                  workout clothes before they commit to buying the item right
+                  for them! You have a one month trial period that starts from
+                  the day that they receive their new gear. For further details
+                  of the Find Your Fit program, see our FAQ section.
                 </p>
               </Card.Text>
             </Card.Body>
