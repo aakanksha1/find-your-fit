@@ -25,7 +25,6 @@ const ProductCard = ({ product }) => {
           </Card.Body>
         </Card>
       </Link>
-
       <br></br>
     </Container>
   );

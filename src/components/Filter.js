@@ -28,14 +28,14 @@ const Filter = ({ productsArr, setProducts }) => {
         }
         expandIconPosition="right"
       >
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Brands" key="1">
+        <Panel className="filter-panel" header="Brands" key="1">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
               <div key={brand}>{brand}</div>
             )
           )}
         </Panel>
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Apparel" key="2">
+        <Panel className="filter-panel" header="Apparel" key="2">
           <Row>
             <Col md={6}>
               <h3>Tops</h3>
@@ -56,7 +56,7 @@ const Filter = ({ productsArr, setProducts }) => {
             </Col>
           </Row>
         </Panel>
-        <Panel style={{ backgroundColor: "#ffffff" }} header="Size" key="3">
+        <Panel className="filter-panel" header="Size" key="3">
           <div>{"XS (26 - 28)"}</div>
           <div>{"S  (28 - 30)"}</div>
           <div>{"M  (30 - 32)"}</div>
@@ -68,9 +68,7 @@ const Filter = ({ productsArr, setProducts }) => {
         style={{ marginTop: "20px", float: "right" }}
         variant="outline-dark"
         onClick={viewProducts}
-      >
-        View Results
-      </Button>
+      ></Button>
     </Container>
   );
 };

@@ -18,10 +18,10 @@ const ProductList = () => {
         );
         setProducts(productsArr);
       })
-      .catch(function(error) {
+      .catch(error => {
         console.log("Error getting documents: ", error);
       });
-  }, [productsArr]);
+  }, []);
 
   return (
     <Container className="product-container">
