@@ -1,0 +1,71 @@
+.info-title {
+  display: inline;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.button-group .try-button {
+  background-color: white !important;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  width: 150px;
+  border-style: outset;
+  border: 1px solid gray;
+}
+.button-group .try-button :hover {
+  filter: brightness(200%) !important;
+}
+.button-group .addtocart-button {
+  background-color: white !important;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  width: 300px;
+  border-style: outset;
+  border: 1px solid gray;
+}
+.button-group .addtocart-button :hover {
+  filter: brightness(200%) !important;
+}
+.color-button-group .black {
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.color-button-group .white {
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.color-button-group .gray {
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.size-button {
+  background-color: white !important;
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.img {
+  border: 0.5px solid black;
+}
