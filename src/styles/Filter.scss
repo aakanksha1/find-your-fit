@@ -11,3 +11,11 @@
   margin: 20px 0px;
   float: right;
 }
+
+.red:hover,
+.red:active,
+.red:visited,
+.red:focus,
+.red:visited {
+  color: red !important;
+}
