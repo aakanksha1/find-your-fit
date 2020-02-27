@@ -15,12 +15,14 @@ const Filter = ({ allProducts, setProducts, products }) => {
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.brand === brandFilter);
+      var holder = products.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
+      console.log("brand:" + brandFilter);
     }
     if (apparelFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+      var holder = products.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
+      console.log("apparel:" + apparelFilter);
     }
     /*
     if (sizeFilter.length() > 1 ){
