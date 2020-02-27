@@ -16,6 +16,6 @@
 .red:active,
 .red:visited,
 .red:focus,
-.red:visited {
+.red:visited .red ::selection {
   color: red !important;
 }
