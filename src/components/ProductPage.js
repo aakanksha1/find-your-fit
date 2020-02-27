@@ -13,6 +13,7 @@ const ProductPage = () => {
       .doc(id)
       .get()
       .then(snapShot => {
+        console.log(snapShot.data());
         setProduct(snapShot.data());
       })
       .catch(error => {

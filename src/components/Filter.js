@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import "../styles/Filter.scss";
 const { Panel } = Collapse;
 
-const Filter = ({ productsArr, setProducts }) => {
+const Filter = ({ allProducts, setProducts, products }) => {
   const [brandFilter, setBrandFilter] = useState("");
   const [apparelFilter, setApparelFiter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
@@ -12,10 +12,12 @@ const Filter = ({ productsArr, setProducts }) => {
   // filter through productArr and setProducts after
   // href tag on the divs for each w/ onClick set the state of the filter
   // give div value property and
+  //filter.brandFilter)
 
   const viewProducts = () => {
-    // var holder = productsArr.filter(obj => obj.brand == filter.brandFilter);
-    // setProducts(holder);
+    var holder = allProducts.filter(obj => obj.brand === "Lululemon");
+    setProducts(holder);
+    console.log(holder);
   };
 
   return (
@@ -68,7 +70,9 @@ const Filter = ({ productsArr, setProducts }) => {
         style={{ marginTop: "20px", float: "right" }}
         variant="outline-dark"
         onClick={viewProducts}
-      ></Button>
+      >
+        View Results
+      </Button>
     </Container>
   );
 };
