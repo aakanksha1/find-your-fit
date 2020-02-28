@@ -1,13 +1,18 @@
+.filter-panel {
+  background-color: #ffffff;
+}
+
 .ant-collapse-header {
   font-size: 20px;
   font-weight: 500;
 }
 
-.filter-panel {
-  background-color: #ffffff;
+.filter-header,
+.ant-collapse-header {
+  font-family: "Roboto Condensed";
 }
 
-#view-filter-results {
+.filter-button {
   margin: 20px 0px;
   float: right;
 }

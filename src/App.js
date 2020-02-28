@@ -13,8 +13,8 @@ import "firebase/auth";
 import "firebase/firestore";
 
 //react + css
-import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.scss";
 
 //router
@@ -34,7 +34,7 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Banner />
@@ -46,7 +46,7 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;
 export { db };

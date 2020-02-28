@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Collapse, Icon } from "antd";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../styles/Filter.scss";
@@ -50,6 +50,8 @@ const Filter = ({ allProducts, setProducts, products }) => {
 
   return (
     <Container>
+      <h3 className="filter-header">Filters</h3>
+      <hr />
       <Collapse
         bordered={false}
         defaultActiveKey={["1"]}
@@ -80,7 +82,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
         <Panel className="filter-panel" header="Apparel" key="2">
           <Row>
             <Col md={6}>
-              <h3>Tops</h3>
+              <h6 className="filter-header">Tops</h6>
               {["Base Layer", "Short Sleeve", "Long Sleeve", "Outerwear"].map(
                 type => (
                   <div>
@@ -100,7 +102,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
               )}
             </Col>
             <Col md={6}>
-              <h3>Bottoms</h3>
+              <h6 className="filter-header">Bottoms</h6>
               {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
                 <div>
                   <a
@@ -173,7 +175,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
         </Panel>
       </Collapse>
       <Button
-        style={{ marginTop: "20px", float: "right" }}
+        className="filter-button btn-sm rounded-0"
         variant="outline-dark"
         onClick={viewProducts}
       >

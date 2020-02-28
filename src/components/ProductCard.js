@@ -15,11 +15,9 @@ const ProductCard = ({ product }) => {
           />
           <Card.Body>
             <Card.Text>
-              <p>{product.brand}</p>
-              <p className="title">{product.name}</p>
-              <p className="price">
-                <span>Price: ${product.price}</span>
-              </p>
+              <h5 className="brand">{product.brand}</h5>
+              <div>{product.name}</div>
+              <div>Price: ${product.price}</div>
               <hr className="line"></hr>
             </Card.Text>
           </Card.Body>

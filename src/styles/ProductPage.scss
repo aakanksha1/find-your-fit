@@ -1,32 +1,10 @@
-.info-title {
-  display: inline;
-}
-
 .button-group {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
-  .try-button {
-    background-color: white !important;
-    color: black;
-    padding: 10px;
-    font-size: 18px;
-    width: 150px;
-    border-style: outset;
-    border: 1px solid gray;
-  }
   .try-button :hover {
     filter: brightness(200%) !important;
-  }
-  .addtocart-button {
-    background-color: white !important;
-    color: black;
-    padding: 10px;
-    font-size: 18px;
-    width: 300px;
-    border-style: outset;
-    border: 1px solid gray;
   }
 
   .addtocart-button :hover {
@@ -35,8 +13,7 @@
 }
 
 .color-button-group {
-  .black {
-    background-color: black;
+  .color-button {
     border-radius: 50%;
     margin-right: 5px;
     width: 30px;
@@ -44,25 +21,18 @@
     font-size: 11px;
     margin-bottom: 10px;
   }
+}
 
-  .white {
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 5px;
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
-    margin-bottom: 10px;
+.purchase-button-group {
+  width: 100%;
+  margin: 15px 0px;
+  button {
+    border-radius: 0px;
   }
-  .gray {
-    background-color: gray;
-    border-radius: 50%;
-    margin-right: 5px;
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
-    margin-bottom: 10px;
-  }
+}
+
+.cart-button {
+  width: 100%;
 }
 
 .size-button {
