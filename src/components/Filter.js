@@ -25,23 +25,27 @@ const Filter = ({ allProducts, setProducts, products }) => {
 
   const viewProducts = () => {
     if (brandFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.brand === brandFilter);
+      let holder = allProducts.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
+      console.log("brand:" + brandFilter);
+      console.log("productsforbrand" + products);
     }
     if (apparelFilter.length > 1) {
-      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+      let holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
+      console.log("apparel:" + apparelFilter);
+      console.log("productsfora" + products);
     }
     if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
-      var holder = allProducts.filter(obj => obj.type === apparelFilter);
+      let holder = allProducts.filter(obj => obj.type === apparelFilter);
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
     }
-    if (sizeFilter.length >= 1) {
-      console.log("help");
-      var holderArr = allProducts.map(product => sizeAvaliable(product));
-      console.log(holderArr);
-    }
+    // if (sizeFilter.length >= 1) {
+    //   let holder = allProducts.filter((product) => {
+    //     const product =
+    //   });
+    // }
   };
 
   return (
