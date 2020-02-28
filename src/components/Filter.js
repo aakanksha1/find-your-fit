@@ -41,6 +41,8 @@ const Filter = ({ allProducts, setProducts, products }) => {
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
     }
+    if (brandFilter.length < 1 && apparelFilter.length < 1)
+      setProducts(allProducts);
     // if (sizeFilter.length >= 1) {
     //   let holder = allProducts.filter((product) => {
     //     const product =
