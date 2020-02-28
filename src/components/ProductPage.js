@@ -9,7 +9,7 @@ import {
   OverlayTrigger,
   Tooltip,
   Button,
-  ButtonToolbar
+  ButtonGroup
 } from "react-bootstrap";
 import "../styles/ProductPage.scss";
 
@@ -45,12 +45,8 @@ const ProductPage = () => {
             <br></br>
           </Col>
           <Col xs={12} sm={12} md={4} lg={3}>
-            <p>
-              <strong>{product.brand}</strong>
-            </p>
-            <p className="info-title">
-              <strong>{product.name}</strong>
-            </p>
+            <h4 className="brand">{product.brand}</h4>
+            <h6>{product.name}</h6>
             <hr></hr>
             <p>Color:</p>
             <div className="color-button-group">
@@ -77,11 +73,13 @@ const ProductPage = () => {
               <button className="size-button">XL</button>
             </div>
 
-            <ButtonToolbar>
-              <Button className="try-button">Try</Button>
-              <Button className="try-button">Buy</Button>
-            </ButtonToolbar>
-            <Button className="try-button">Add to Cart</Button>
+            <ButtonGroup className="purchase-button-group">
+              <Button variant="outline-dark">Try</Button>
+              <Button variant="outline-dark">Buy</Button>
+            </ButtonGroup>
+            <Button variant="outline-dark" className="rounded-0 cart-button">
+              Add to Cart
+            </Button>
 
             <Card.Text>
               <hr className="line"></hr>

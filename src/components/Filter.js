@@ -175,7 +175,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
         </Panel>
       </Collapse>
       <Button
-        className="filter-button btn-sm"
+        className="filter-button btn-sm rounded-0"
         variant="outline-dark"
         onClick={viewProducts}
       >
