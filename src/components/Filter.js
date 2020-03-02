@@ -8,6 +8,7 @@ const Filter = ({ allProducts, setProducts, products }) => {
   const [brandFilter, setBrandFilter] = useState("");
   const [apparelFilter, setApparelFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
+  const [genderFilter, setGenderFilter] = useState("");
 
   const sizeAvaliable = product => {
     console.log(product.colors);
@@ -27,22 +28,49 @@ const Filter = ({ allProducts, setProducts, products }) => {
     if (brandFilter.length > 1) {
       let holder = allProducts.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
-      console.log("brand:" + brandFilter);
-      console.log("productsforbrand" + products);
     }
     if (apparelFilter.length > 1) {
       let holder = allProducts.filter(obj => obj.type === apparelFilter);
       setProducts(holder);
-      console.log("apparel:" + apparelFilter);
-      console.log("productsfora" + products);
     }
+
+    if (genderFilter.length > 1) {
+      let holder = allProducts.filter(obj => obj.gender === genderFilter);
+      setProducts(holder);
+    }
+
     if ((apparelFilter.length > 1) & (brandFilter.length > 1)) {
       let holder = allProducts.filter(obj => obj.type === apparelFilter);
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
     }
-    if (brandFilter.length < 1 && apparelFilter.length < 1)
+    if (
+      brandFilter.length < 1 &&
+      apparelFilter.length < 1 &&
+      genderFilter.length < 1
+    )
       setProducts(allProducts);
+
+    if ((genderFilter.length > 1) & (brandFilter.length > 1)) {
+      let holder = allProducts.filter(obj => obj.gender === genderFilter);
+      holder = holder.filter(obj => obj.brand === brandFilter);
+      setProducts(holder);
+    }
+    if ((genderFilter.length > 1) & (apparelFilter.length > 1)) {
+      let holder = allProducts.filter(obj => obj.gender === genderFilter);
+      holder = holder.filter(obj => obj.type === apparelFilter);
+      setProducts(holder);
+    }
+    if (
+      (genderFilter.length > 1) &
+      (apparelFilter.length > 1) &
+      (brandFilter.length > 1)
+    ) {
+      let holder = allProducts.filter(obj => obj.gender === genderFilter);
+      holder = holder.filter(obj => obj.type === apparelFilter);
+      holder = holder.filter(obj => obj.brand === brandFilter);
+      setProducts(holder);
+    }
     // if (sizeFilter.length >= 1) {
     //   let holder = allProducts.filter((product) => {
     //     const product =
@@ -62,6 +90,23 @@ const Filter = ({ allProducts, setProducts, products }) => {
         }
         expandIconPosition="right"
       >
+        <Panel className="filter-panel" header="Gender" key="1">
+          {["Women", "Men"].map(gender => (
+            <div>
+              <a
+                className={genderFilter === gender ? "red" : null}
+                onClick={() => {
+                  genderFilter === gender
+                    ? setGenderFilter("")
+                    : setGenderFilter(gender);
+                }}
+                key={gender}
+              >
+                {gender}
+              </a>
+            </div>
+          ))}
+        </Panel>
         <Panel className="filter-panel" header="Brands" key="1">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
