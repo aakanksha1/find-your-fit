@@ -40,7 +40,7 @@ const App = () => {
       <Banner />
       <Switch>
         <Route path="/" exact component={ProductList} />
-        <Route path="/checkout/:id" exact component={CheckoutPage} />
+        <Route path="/checkout" exact component={CheckoutPage} />
         <Route path="/:id" exact component={ProductPage} />
       </Switch>
       <Footer />
