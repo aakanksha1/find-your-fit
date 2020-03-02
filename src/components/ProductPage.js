@@ -74,8 +74,12 @@ const ProductPage = () => {
             </div>
 
             <ButtonGroup className="purchase-button-group">
-              <Button variant="outline-dark">Try</Button>
-              <Button variant="outline-dark">Buy</Button>
+              <Button variant="outline-dark">
+                Try ${(0.25 * product.price).toFixed(2)}{" "}
+              </Button>
+              <Button variant="outline-dark">
+                Buy ${product.price.toFixed(2)}
+              </Button>
             </ButtonGroup>
             <Button variant="outline-dark" className="rounded-0 cart-button">
               Add to Cart
@@ -83,11 +87,7 @@ const ProductPage = () => {
 
             <Card.Text>
               <hr className="line"></hr>
-              <p className="info-price">
-                <span>
-                  <strong>Price:</strong> ${product.price}
-                </span>
-              </p>
+
               <p className="info-description">
                 <strong>Description: </strong> <br></br>
                 {product.description}
