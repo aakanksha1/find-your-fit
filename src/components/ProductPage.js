@@ -17,7 +17,7 @@ const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [size, setSize] = useState(null);
-  const [color, setColor] = useState(null);
+  const [pcolor, setColor] = useState(null);
 
   useEffect(() => {
     db.collection("items")
@@ -53,75 +53,72 @@ const ProductPage = () => {
             <p>Color:</p>
             <div className="color-button-group">
               {product.colors.map((color, i) => (
-
                 <OverlayTrigger
                   placement="top"
                   overlay={props => <Tooltip {...props}>{color.value}</Tooltip>}
                 >
                   <button
+                    id="color-button"
                     key={i}
-                    className={color === i ? "red" : null}
+                    className={pcolor === color.value ? "yellow" : null}
                     onClick={() => {
-                      color === i
-                        ? setColor("")
-                        : setColor(color.value);
+                      pcolor === i ? setColor("") : setColor(color.value);
+                      console.log(pcolor);
                     }}
-                    style={{ backgroundColor: color.hex }}>
-                    {i}
-
-                  </button>
+                    style={{ backgroundColor: color.hex }}
+                  ></button>
                 </OverlayTrigger>
               ))}
             </div>
 
             <p>Size:</p>
-            <div>
+            <div className="color-button-group">
               {["XS", "S", "M", "L", "XL"].map(s => (
-                <div>
-                  <a
-                    className={size === s ? "red" : null}
-                    onClick={() => {
-                      size === s
-                        ? setSize("")
-                        : setSize(s);
-                    }}
-                    key={s}
-                  >
-                    {s}
-                  </a>
-                </div>
+                <button
+                  className={size === s ? "black" : null}
+                  id="size-button"
+                  onClick={() => {
+                    size === s ? setSize("") : setSize(s);
+                  }}
+                  key={s}
+                >
+                  {s}
+                </button>
               ))}
             </div>
 
-
             <ButtonGroup className="purchase-button-group">
-              <Link to={{
-                pathname: `/checkout`,
-                state: {
-                  checkoutProduct: product,
-                  checkoutProductSize: size,
-                  checkoutProductColor: color,
-                  purchaseType: 'trial'
-                }
-              }}>
+              <Link
+                to={{
+                  pathname: `/checkout`,
+                  state: {
+                    checkoutProduct: product,
+                    checkoutProductSize: size,
+                    checkoutProductColor: pcolor,
+                    purchaseType: "trial"
+                  }
+                }}
+              >
                 {/* `/checkout/${id}`} className="product-link"> */}
                 <Button variant="outline-dark">
                   Try ${(0.25 * product.price).toFixed(2)}{" "}
                 </Button>
               </Link>
-              <Link to={{
-                pathname: `/checkout`,
-                state: {
-                  checkoutProduct: product,
-                  checkoutProductSize: size,
-                  checkoutProductColor: color,
-                  purchaseType: 'buy'
-                }
-              }}>
+              <Link
+                to={{
+                  pathname: `/checkout`,
+                  state: {
+                    checkoutProduct: product,
+                    checkoutProductSize: size,
+                    checkoutProductColor: pcolor,
+                    purchaseType: "buy"
+                  }
+                }}
+              >
                 <Button variant="outline-dark">
                   Buy ${product.price.toFixed(2)}
-                </Button></Link>
-
+                </Button>
+              </Link>
             </ButtonGroup>
             <Card.Text>
               <hr className="line"></hr>
