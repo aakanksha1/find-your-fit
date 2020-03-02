@@ -18,6 +18,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [size, setSize] = useState(null);
   const [color, setColor] = useState(null);
+  const isEnabled = size !== null && color !== null;
 
   useEffect(() => {
     db.collection("items")
@@ -105,7 +106,7 @@ const ProductPage = () => {
                 }
               }}>
                 {/* `/checkout/${id}`} className="product-link"> */}
-                <Button variant="outline-dark">
+                <Button variant="outline-dark" disabled={!isEnabled}>
                   Try ${(0.25 * product.price).toFixed(2)}{" "}
                 </Button>
               </Link>
@@ -115,10 +116,10 @@ const ProductPage = () => {
                   checkoutProduct: product,
                   checkoutProductSize: size,
                   checkoutProductColor: color,
-                  purchaseType: 'buy'
+                  purchaseType: 'order'
                 }
               }}>
-                <Button variant="outline-dark">
+                 <Button variant="outline-dark" disabled={!isEnabled}>
                   Buy ${product.price.toFixed(2)}
                 </Button></Link>
 
