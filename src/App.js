@@ -6,6 +6,7 @@ import ProductList from "./components/ProductList";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
 import CheckoutPage from "./components/CheckoutPage";
+import FYFPage from "./components/FYFPage";
 
 //firebase imports
 import firebase from "firebase/app";
@@ -41,6 +42,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={ProductList} />
         <Route path="/checkout" exact component={CheckoutPage} />
+        <Route path="/yourfit" exact component={FYFPage} />
         <Route path="/:id" exact component={ProductPage} />
       </Switch>
       <Footer />
