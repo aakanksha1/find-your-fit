@@ -106,8 +106,8 @@ const ProductPage = () => {
               }}>
                 {/* `/checkout/${id}`} className="product-link"> */}
                 <Button variant="outline-dark">
-                  Try
-              </Button>
+                  Try ${(0.25 * product.price).toFixed(2)}{" "}
+                </Button>
               </Link>
               <Link to={{
                 pathname: `/checkout`,
@@ -118,19 +118,14 @@ const ProductPage = () => {
                   purchaseType: 'buy'
                 }
               }}>
-                <Button variant="outline-dark">Buy</Button></Link>
-            </ButtonGroup>
-            {/* <Button variant="outline-dark" className="rounded-0 cart-button">
-              Add to Cart
-            </Button> */}
+                <Button variant="outline-dark">
+                  Buy ${product.price.toFixed(2)}
+                </Button></Link>
 
+            </ButtonGroup>
             <Card.Text>
               <hr className="line"></hr>
-              <p className="info-price">
-                <span>
-                  <strong>Price:</strong> ${product.price}
-                </span>
-              </p>
+
               <p className="info-description">
                 <strong>Description: </strong> <br></br>
                 {product.description}
