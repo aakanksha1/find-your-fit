@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../App";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {
   Container,
   Card,
@@ -74,7 +74,12 @@ const ProductPage = () => {
             </div>
 
             <ButtonGroup className="purchase-button-group">
-              <Button variant="outline-dark">Try</Button>
+              <Link to={`/checkout/${id}`} className="product-link">
+
+                <Button variant="outline-dark">
+                  Try
+              </Button>
+              </Link>
               <Button variant="outline-dark">Buy</Button>
             </ButtonGroup>
             <Button variant="outline-dark" className="rounded-0 cart-button">
