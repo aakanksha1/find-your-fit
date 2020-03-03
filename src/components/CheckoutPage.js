@@ -10,39 +10,50 @@ import { db } from "../App";
 const CheckoutPage = () => {
   // const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const {state} = useLocation();
+  const { state } = useLocation();
   console.log(state.checkoutProduct);
 
   return (
     <Container className="product-container">
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <h3>
+            <strong>ORDER CONFIRMED</strong></h3>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <strong>Your {state.purchaseType} will come in 2-4 days.</strong>
+        </Col>
+      </Row>
       <br></br>
       <Row className="header1">
-        <strong>ORDER CONFIRMED</strong>
+        <Col md={{ span: 6, offset: 3 }}>
+          <strong>Order #ABC123456789</strong>
+        </Col>
       </Row>
       <br></br>
-      <Row className="header2">
-        <strong>Your trial will come in 2-4 days.</strong>
-      </Row>
-      <br></br>
-      <Row className="header3">
-        <strong>Order #ABC123456789</strong>
-      </Row>
-      <Card border="secondary" className="product-page-card">
-        <Card.Img variant="top" className="img" src={state.checkoutProduct.thumbnail} />
-      </Card>
-      <h4 className="brand">{state.checkoutProduct.brand}</h4>
-            <h6>{state.checkoutProduct.name}</h6>
-            <p className="info-price">
-                <span>
-                  <strong>Price:</strong> ${state.checkoutProduct.price}
-                </span>
-              </p> 
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
+          <Row>
+            <Col md={6}>
+              <Card border="secondary" className="product-page-card">
+                <Card.Img variant="top" className="img" src={state.checkoutProduct.thumbnail} />
+              </Card>
+            </Col>
+            <Col md={6}>
+              <h4 className="brand">{state.checkoutProduct.brand}</h4>
+              <h6>{state.checkoutProduct.name}</h6>
               <p className="info-price">
                 <span>
-                  <strong>Color:</strong> {state.checkoutProductColor}
-                  <strong>Size: </strong> {state.checkoutProductSize}
+                  <strong>1 | {state.checkoutProductColor} | {state.checkoutProductSize}</strong>
                 </span>
-              </p> 
+              </p>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
     </Container>
   );
 };
