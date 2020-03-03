@@ -12,15 +12,19 @@
   }
 }
 
-.color-button-group {
-  .color-button {
-    border-radius: 50%;
-    margin-right: 5px;
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
-    margin-bottom: 10px;
-  }
+#color-button {
+  border-radius: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.yellow {
+  border: 2px solid red;
+}
+.size-but {
+  display: inline-block !important;
 }
 
 .purchase-button-group {
@@ -34,15 +38,18 @@
 .cart-button {
   width: 100%;
 }
+.black {
+  border: 2px solid red;
+}
 
-.size-button {
+#size-button {
   background-color: white !important;
-  border-radius: 50%;
-  margin-right: 5px;
-  width: 30px;
-  height: 30px;
-  font-size: 11px;
-  margin-bottom: 10px;
+  border-radius: 50% !important;
+  margin-right: 5px !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 11px !important;
+  margin-bottom: 10px !important;
 }
 
 .img {
