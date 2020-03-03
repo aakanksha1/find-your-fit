@@ -5,7 +5,7 @@ import "../styles/FYFPage.scss";
 import { db } from "../App";
 
 const FYFPage = () => {
-  const [results, setResults] = useState({ gender: "Male" });
+  const [results, setResults] = useState({ gender: "Men" });
   const [activities, setActivities] = useState([]);
   const history = useHistory();
   const handleChange = type => {
@@ -40,8 +40,8 @@ const FYFPage = () => {
         <Form.Group controlId="FYF.ControlSelect1">
           <Form.Label>Gender</Form.Label>
           <Form.Control as="select" onChange={handleChange("gender")}>
-            <option>Male</option>
-            <option>Female</option>
+            <option>Men</option>
+            <option>Women</option>
           </Form.Control>
         </Form.Group>
         <Form.Label>
@@ -51,37 +51,37 @@ const FYFPage = () => {
           <Form.Check
             inline
             label="Running"
-            value="Running"
+            value="running"
             onChange={handleCheck}
           />
           <Form.Check
             inline
             label="Weight Training"
-            value="Weight Training"
+            value="weight training"
             onChange={handleCheck}
           />
           <Form.Check
             inline
             label="Cycling"
-            value="Cycling"
+            value="cycling"
             onChange={handleCheck}
           />
           <Form.Check
             inline
             label="Hiking"
-            value="Hiking"
+            value="hiking"
             onChange={handleCheck}
           />
           <Form.Check
             inline
             label="Climbing"
-            value="Climbing"
+            value="climbing"
             onChange={handleCheck}
           />
           <Form.Check
             inline
             label="Marathon"
-            value="Marathon"
+            value="marathon"
             onChange={handleCheck}
           />
         </div>
