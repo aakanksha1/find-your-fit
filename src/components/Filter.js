@@ -1,14 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Collapse, Icon } from "antd";
+import { Link, useLocation } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../styles/Filter.scss";
+import { db } from "../App";
+
 const { Panel } = Collapse;
 
-const Filter = ({ allProducts, setProducts, products }) => {
+const Filter = ({ allProducts, setProducts }) => {
   const [brandFilter, setBrandFilter] = useState("");
   const [apparelFilter, setApparelFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
+  const [FYFFilter, setFYFFilter] = useState({});
+  const { state } = useLocation();
+
+  // get FYF Filter
+  useEffect(() => {
+    db.collection("smart_suggestions")
+      .doc("Snhz7v2gpYPTPhdZMJFP")
+      .get()
+      .then(querySnapshot => {
+        setFYFFilter(querySnapshot.data());
+      })
+      .catch(error => {
+        console.log("Error getting documents: ", error);
+      });
+  }, []);
+
+  const handleFYF = () => {
+    const FYFProducts = allProducts.filter(product => {
+      const genderMatch = product.gender === FYFFilter.gender;
+      const activityMatch = product.activities.filter(activity =>
+        FYFFilter.activities.includes(activity)
+      ).length;
+      return genderMatch && activityMatch;
+    });
+    setProducts(FYFProducts);
+  };
 
   const sizeAvaliable = product => {
     console.log(product.colors);
@@ -228,6 +257,13 @@ const Filter = ({ allProducts, setProducts, products }) => {
       >
         View Results
       </Button>
+      {!state ? (
+        <Link to="/yourfit">
+          <Button>Try Now: Find your Fit Quiz</Button>
+        </Link>
+      ) : (
+        <Button onClick={handleFYF}>See customized items</Button>
+      )}
     </Container>
   );
 };
