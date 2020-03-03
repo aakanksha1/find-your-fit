@@ -35,7 +35,7 @@ const CheckoutPage = () => {
 
       <Container className="product-container">
         <Row className="order-summary">
-          <Col xs={{span:9, offset: 3}} sm={{span:9, offset: 3}} md={{span:9, offset: 3}} lg={{span:9, offset: 3}}>
+          <Col xs={{span:10, offset: 2}} sm={{span:10, offset: 2}} md={{span:8, offset: 3}} lg={{span:9, offset: 3}}>
             <strong>Order Summary</strong>
           </Col>
         </Row>
@@ -62,7 +62,7 @@ const CheckoutPage = () => {
       </Container>
       <Container className="total">
         <Row>
-          <Col >
+          <Col>
             <hr className="horizontal-rule"></hr>
           </Col>
         </Row>

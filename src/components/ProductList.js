@@ -28,7 +28,7 @@ const ProductList = () => {
   return (
     <Container className="product-container">
       <Row>
-        <Col md={3}>
+        <Col xs ={6} sm={6} md={3} lg={3}>
           <Filter
             allProducts={allProducts}
             setProducts={setProducts}
