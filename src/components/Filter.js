@@ -267,9 +267,9 @@ const Filter = ({ allProducts, setProducts }) => {
           <Link to="/yourfit">
             <Button>Try a different suggestion!</Button>
           </Link>
+          <Button onClick={handleFYF}>See results of customized items</Button>
         </div>
       )}
-      <Button onClick={handleFYF}>See results of customized items</Button>
     </Container>
   );
 };
