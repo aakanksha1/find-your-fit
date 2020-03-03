@@ -31,8 +31,8 @@ const Filter = ({ allProducts, setProducts }) => {
   const handleFYF = () => {
     const FYFProducts = allProducts.filter(product => {
       const genderMatch = product.gender === FYFFilter.gender;
-      const activityMatch = product.activities.filter(activity =>
-        FYFFilter.activities.includes(activity)
+      const activityMatch = product.activity.filter(act =>
+        FYFFilter.activities.includes(act)
       ).length;
       return genderMatch && activityMatch;
     });
@@ -250,6 +250,7 @@ const Filter = ({ allProducts, setProducts }) => {
           </div>
         </Panel>
       </Collapse>
+
       <Button
         className="filter-button btn-sm rounded-0"
         variant="outline-dark"
@@ -262,8 +263,13 @@ const Filter = ({ allProducts, setProducts }) => {
           <Button>Try Now: Find your Fit Quiz</Button>
         </Link>
       ) : (
-        <Button onClick={handleFYF}>See customized items</Button>
+        <div>
+          <Link to="/yourfit">
+            <Button>Try a different suggestion!</Button>
+          </Link>
+        </div>
       )}
+      <Button onClick={handleFYF}>See results of customized items</Button>
     </Container>
   );
 };
