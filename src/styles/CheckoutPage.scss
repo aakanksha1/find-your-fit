@@ -2,19 +2,56 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-size: 36px;
+  font-size: 52px;
 }
 
 .header2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .header3 {
+  margin: 1em 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
 }
+
+
+.img {
+  height: 50%;
+}
+
+.product-container {
+  margin: 2em 0 0 0;
+
+  .card-info {
+    margin: 2em 0 0 0;
+  }
+
+  .order-summary {
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0em 0 0 0;
+  }
+
+}
+
+.horizontal-rule {
+  width: 50%;
+  background-color: black;
+}
+
+.total {
+  margin: 2em 0 0 0;
+
+  .total-price {
+    margin: 2em 0 0 0;
+  }
+}
+
