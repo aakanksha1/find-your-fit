@@ -260,14 +260,33 @@ const Filter = ({ allProducts, setProducts }) => {
       </Button>
       {!state ? (
         <Link to="/yourfit">
-          <Button>Try Now: Find your Fit Quiz</Button>
+          <Button
+            id="fyf"
+            className="filter-button btn-sm rounded-0"
+            variant="outline-dark"
+          >
+            Try Now: Find your Fit Quiz
+          </Button>
         </Link>
       ) : (
         <div>
           <Link to="/yourfit">
-            <Button>Try a different suggestion!</Button>
+            <Button
+              id="fyf"
+              className="filter-button btn-sm rounded-0"
+              variant="outline-dark"
+            >
+              Try a different suggestion!
+            </Button>
           </Link>
-          <Button onClick={handleFYF}>See results of customized items</Button>
+          <Button
+            id="fyf"
+            className="filter-button btn-sm rounded-0"
+            variant="outline-dark"
+            onClick={handleFYF}
+          >
+            See results of customized items
+          </Button>
         </div>
       )}
     </Container>
