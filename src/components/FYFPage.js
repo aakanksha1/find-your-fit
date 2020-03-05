@@ -28,7 +28,7 @@ const FYFPage = () => {
     { name: "Marathon", value: "distance running" },
     { name: "Triathlon", value: "swimming" },
     { name: "Cycling Race", value: "road cycling" },
-    { name: "Obstacle Race", value: "obstacle race" }
+    { name: "Obstacle Race", value: "obstacle racing" }
   ];
 
   const history = useHistory();
