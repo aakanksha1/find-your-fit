@@ -85,7 +85,7 @@ const FYFPage = () => {
             onChange={handleCheck}
           />
         </div>
-        <Button variant="primary" type="submit">
+        <Button className="btn pull-left" variant="outline-dark" type="submit">
           Submit
         </Button>
       </Form>
