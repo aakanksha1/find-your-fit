@@ -29,13 +29,11 @@ const ProductList = () => {
   return (
     <Container className="product-container">
       <Row>
-        <Col xs={6} sm={6} md={3} lg={3}>
-          <Filter
-            allProducts={allProducts}
-            setProducts={setProducts}
-            products={products}
-          />
-        </Col>
+        <Filter
+          className="Filters"
+          allProducts={allProducts}
+          setProducts={setProducts}
+        />
         <Col md={9}>
           {products.length < 1 ? (
             <p
