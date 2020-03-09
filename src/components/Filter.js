@@ -15,6 +15,17 @@ const Filter = ({ allProducts, setProducts }) => {
   const [FYFFilter, setFYFFilter] = useState({});
   const { state } = useLocation();
 
+  const handleFYF = () => {
+    const FYFProducts = allProducts.filter(product => {
+      const genderMatch = product.gender === FYFFilter.gender;
+      const activityMatch = product.activity.filter(act =>
+        FYFFilter.activities.includes(act)
+      ).length;
+      return genderMatch && activityMatch;
+    });
+    setProducts(FYFProducts);
+  };
+
   // get FYF Filter
   useEffect(() => {
     db.collection("smart_suggestions")
@@ -28,16 +39,12 @@ const Filter = ({ allProducts, setProducts }) => {
       });
   }, []);
 
-  const handleFYF = () => {
-    const FYFProducts = allProducts.filter(product => {
-      const genderMatch = product.gender === FYFFilter.gender;
-      const activityMatch = product.activity.filter(act =>
-        FYFFilter.activities.includes(act)
-      ).length;
-      return genderMatch && activityMatch;
-    });
-    setProducts(FYFProducts);
-  };
+  // Have FYF filter done automatically
+  useEffect(() => {
+    if (state) {
+      if (state.smartFiltered) handleFYF();
+    }
+  }, [FYFFilter, allProducts]);
 
   const sizeAvaliable = product => {
     console.log(product.colors);
@@ -285,7 +292,7 @@ const Filter = ({ allProducts, setProducts }) => {
             variant="outline-dark"
             onClick={handleFYF}
           >
-            See results of customized items
+            See results of latest customized items
           </Button>
         </div>
       )}

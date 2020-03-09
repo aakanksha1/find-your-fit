@@ -72,7 +72,10 @@ const FYFPage = () => {
     db.collection("smart_suggestions")
       .doc("Snhz7v2gpYPTPhdZMJFP")
       .set(data);
-    history.push({ pathname: "/", state: { filtered: true } });
+    history.push({
+      pathname: "/",
+      state: { smartFiltered: true }
+    });
   };
 
   return (
