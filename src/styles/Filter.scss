@@ -1,24 +1,30 @@
 .filter-panel {
   background-color: white !important;
 }
+#pan {
+  width: 100% !important;
+}
 
-#pan,
+@media screen and (max-width: 800px) {
+  #ss {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    background-color: white !important;
+  }
+  .big-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white !important;
+  }
+}
+
 #cont #big-cont {
   background-color: white !important;
 }
-#ss {
-  display: flex;
-  flex-direction: column;
-  justify-content: center !important;
-  background-color: white !important;
-}
-.big-cont {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: white !important;
-}
+
 .ant-collapse-header {
   font-size: 20px;
   font-weight: 500;
