@@ -51,10 +51,12 @@ const ProductPage = () => {
             <h4 className="brand">{product.brand}</h4>
             <h6>{product.name}</h6>
             <hr></hr>
+            <div className="prompt">
+              <i>Select color and size to proceed to checkout</i>
+            </div>
             <p>Color:</p>
             <div className="color-button-group">
               {product.colors.map((color, i) => (
-
                 <OverlayTrigger
                   placement="top"
                   overlay={props => <Tooltip {...props}>{color.value}</Tooltip>}
@@ -64,14 +66,11 @@ const ProductPage = () => {
                     key={i}
                     className={pcolor === color.value ? "yellow" : null}
                     onClick={() => {
-                      pcolor === i ?
-                        setColor("") : setColor(color.value);
+                      pcolor === i ? setColor("") : setColor(color.value);
                       console.log(pcolor);
                     }}
                     style={{ backgroundColor: color.hex }}
                   ></button>
-
-
                 </OverlayTrigger>
               ))}
             </div>
@@ -79,7 +78,7 @@ const ProductPage = () => {
             <p>Size:</p>
             <div className="color-button-group">
               {["XS", "S", "M", "L", "XL"].map(s => (
-                   <button
+                <button
                   className={size === s ? "black" : null}
                   id="size-button"
                   onClick={() => {
@@ -92,7 +91,7 @@ const ProductPage = () => {
               ))}
             </div>
             <ButtonGroup className="purchase-button-group">
-            <Link
+              <Link
                 to={{
                   pathname: `/checkout`,
                   state: {
@@ -120,7 +119,8 @@ const ProductPage = () => {
               >
                 <Button variant="outline-dark" disabled={!isEnabled}>
                   Buy ${product.price.toFixed(2)}
-                </Button></Link>
+                </Button>
+              </Link>
             </ButtonGroup>
             <Card.Text>
               <hr className="line"></hr>
