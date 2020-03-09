@@ -119,7 +119,7 @@ const Filter = ({ allProducts, setProducts }) => {
         }
         expandIconPosition="right"
       >
-        <Panel className="filter-panel" header="Gender" key="1">
+        <Panel className="filter-panel" header="Gender" key="3">
           {["Women", "Men"].map(gender => (
             <div>
               <a
@@ -136,7 +136,7 @@ const Filter = ({ allProducts, setProducts }) => {
             </div>
           ))}
         </Panel>
-        <Panel className="filter-panel" header="Brands" key="1">
+        <Panel className="filter-panel" header="Brands" key="3">
           {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
             brand => (
               <div>
