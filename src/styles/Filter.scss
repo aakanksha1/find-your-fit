@@ -1,7 +1,24 @@
 .filter-panel {
-  background-color: #ffffff;
+  background-color: white !important;
 }
 
+#pan,
+#cont #big-cont {
+  background-color: white !important;
+}
+#ss {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  background-color: white !important;
+}
+.big-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: white !important;
+}
 .ant-collapse-header {
   font-size: 20px;
   font-weight: 500;
@@ -10,6 +27,9 @@
 .filter-header,
 .ant-collapse-header {
   font-family: "Roboto Condensed";
+}
+.ant-collapse-borderless {
+  background-color: white !important;
 }
 
 .filter-button {
