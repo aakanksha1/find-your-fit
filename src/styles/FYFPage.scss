@@ -1,0 +1,20 @@
+.form-label {
+  font-family: "Roboto Condensed";
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.btn-group {
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn-group .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#submit-container {
+  display: flex;
+  flex-direction: row-reverse;
+}

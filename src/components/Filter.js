@@ -30,12 +30,8 @@ const Filter = ({ allProducts, setProducts }) => {
   useEffect(() => {
     db.collection("smart_suggestions")
       .doc("Snhz7v2gpYPTPhdZMJFP")
-      .get()
-      .then(querySnapshot => {
-        setFYFFilter(querySnapshot.data());
-      })
-      .catch(error => {
-        console.log("Error getting documents: ", error);
+      .onSnapshot(docSnapshot => {
+        setFYFFilter(docSnapshot.data());
       });
   }, []);
 
