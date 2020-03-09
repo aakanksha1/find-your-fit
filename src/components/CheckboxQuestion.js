@@ -1,18 +1,30 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import {
+  ButtonToolbar,
+  ToggleButtonGroup,
+  ToggleButton
+} from "react-bootstrap";
 
-const CheckboxQuestion = ({ list, toggleActivity }) => {
+const CheckboxQuestion = ({ options, activities, setActivities }) => {
   return (
-    <div className="mb-3">
-      {list.map(option => (
-        <Form.Check
-          inline={true}
-          label={option.name}
-          value={option.value}
-          onChange={e => toggleActivity(e.target.value)}
-        />
-      ))}
-    </div>
+    <ButtonToolbar>
+      <ToggleButtonGroup
+        type="checkbox"
+        onChange={setActivities}
+        value={activities}
+      >
+        {options.map(option => (
+          <ToggleButton
+            className="col-6"
+            style={{ borderRadius: 0, marginBottom: "10px" }}
+            variant="outline-dark"
+            value={option.value}
+          >
+            {option.name}
+          </ToggleButton>
+        ))}
+      </ToggleButtonGroup>
+    </ButtonToolbar>
   );
 };
 

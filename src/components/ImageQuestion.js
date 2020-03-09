@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const CheckboxQuestion = ({ activities, toggleActivity }) => {
   const style = {
     width: "100%",
-    height: "300px",
+    height: "200px",
     objectFit: "cover",
     marginBottom: "20px",
     cursor: "pointer"
