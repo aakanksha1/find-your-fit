@@ -33,7 +33,7 @@ const ProductList = () => {
           allProducts={allProducts}
           setProducts={setProducts}
         />
-        <Col md={9}>
+        <Col md={12}>
           {products.length < 1 ? (
             <p
               style={{
