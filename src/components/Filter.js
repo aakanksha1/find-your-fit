@@ -30,12 +30,8 @@ const Filter = ({ allProducts, setProducts }) => {
   useEffect(() => {
     db.collection("smart_suggestions")
       .doc("Snhz7v2gpYPTPhdZMJFP")
-      .get()
-      .then(querySnapshot => {
-        setFYFFilter(querySnapshot.data());
-      })
-      .catch(error => {
-        console.log("Error getting documents: ", error);
+      .onSnapshot(docSnapshot => {
+        setFYFFilter(docSnapshot.data());
       });
   }, []);
 
@@ -301,11 +297,40 @@ const Filter = ({ allProducts, setProducts }) => {
             expandIconPosition="right"
             id="ss"
           >
-            See results of latest customized items
-          </Button>
-        </div>
-      )}
-
+            {!state ? (
+              <Link to="/yourfit">
+                <Button
+                  id="fyf"
+                  className="filter-button btn-sm rounded-0"
+                  variant="outline-dark"
+                >
+                  Try Now: Find your Fit Quiz
+                </Button>
+              </Link>
+            ) : (
+              <div id="ss">
+                <Link to="/yourfit">
+                  <Button
+                    id="fyf"
+                    className="filter-button btn-sm rounded-0"
+                    variant="outline-dark"
+                  >
+                    Try a different suggestion!
+                  </Button>
+                </Link>
+                <Button
+                  id="fyf"
+                  className="filter-button btn-sm rounded-0"
+                  variant="outline-dark"
+                  onClick={handleFYF}
+                >
+                  See results of customized items
+                </Button>
+              </div>
+            )}
+          </Collapse>
+        </Panel>
+      </Collapse>
     </Container>
   );
 };
