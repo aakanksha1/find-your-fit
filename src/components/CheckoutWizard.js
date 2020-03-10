@@ -4,6 +4,8 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import ReactDOM from "react-dom";
 import CheckoutPage from "./CheckoutPage";
 
+import "../styles/CheckoutWizard.scss";
+
 class MasterForm extends React.Component {
   constructor(props) {
     super(props);
@@ -119,76 +121,205 @@ function Step1(props) {
     return null;
   }
   return (
-    <div className="form-group">
-      <h2> Shipping Information</h2>
-      <h5> Contact Information</h5>
-      <input
-        className="form-control"
-        id="email"
-        name="email"
-        type="text"
-        placeholder="Enter email"
-        value={props.email}
-        onChange={props.handleChange}
-      />
-      <h5> Shipping Address</h5>
-      <input
-        className="form-control"
-        id="fname"
-        name="fname"
-        type="text"
-        placeholder="First Name"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Address"
-      />
+    <div>
+      <Row className="header">
+        <Col
+          xs={12}
+          sm={{ span: 6, offset: 1 }}
+          md={{ span: 6, offset: 1 }}
+          lg={{ span: 6, offset: 1 }}
+        >
+          <h2> SHIPPING</h2>
+        </Col>
+      </Row>
 
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Apt. Suite, Etc"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="City"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Country"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="State"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Zip"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Phone Number"
-      />
+      <Row>
+        <Col
+          xs={12}
+          sm={{ span: 6, offset: 1 }}
+          md={{ span: 6, offset: 1 }}
+          lg={{ span: 6, offset: 1 }}
+        >
+          <h5> CONTACT INFORMATION</h5>
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={8}
+          sm={{ span: 8, offset: 1 }}
+          md={{ span: 8, offset: 1 }}
+          lg={{ span: 8, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Enter email"
+            value="batu@u.northwestern.edu"
+            onChange={props.handleChange}
+          />
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={8}
+          sm={{ span: 8, offset: 1 }}
+          md={{ span: 8, offset: 1 }}
+          lg={{ span: 8, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="lname"
+            name="lname"
+            type="text"
+            placeholder="Phone Number"
+            value="+3129998877"
+          />
+        </Col>
+      </Row>
+
+      <br></br>
+      <Row>
+        <Col
+          xs={12}
+          sm={{ span: 6, offset: 1 }}
+          md={{ span: 6, offset: 1 }}
+          lg={{ span: 6, offset: 1 }}
+        >
+          <h5> SHIPPING ADDRESS</h5>
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={6}
+          sm={{ span: 4, offset: 1 }}
+          md={{ span: 4, offset: 1 }}
+          lg={{ span: 4, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            type="text"
+            placeholder="First Name"
+            value="Batuhan"
+          />
+        </Col>
+        <Col
+          xs={6}
+          sm={{ span: 4, offset: 0 }}
+          md={{ span: 4, offset: 0 }}
+          lg={{ span: 4, offset: 0 }}
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            type="text"
+            placeholder="Last Name"
+            value="Ergor"
+          />
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={8}
+          sm={{ span: 8, offset: 1 }}
+          md={{ span: 8, offset: 1 }}
+          lg={{ span: 8, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="lname"
+            name="lname"
+            type="text"
+            placeholder="Address"
+            value="1630 Chicago Ave"
+          />
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={8}
+          sm={{ span: 8, offset: 1 }}
+          md={{ span: 8, offset: 1 }}
+          lg={{ span: 8, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="lname"
+            name="lname"
+            type="text"
+            placeholder="Apt. Suite, Etc"
+            value="The Park Evanston"
+          />
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={8}
+          sm={{ span: 8, offset: 1 }}
+          md={{ span: 8, offset: 1 }}
+          lg={{ span: 8, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="lname"
+            name="lname"
+            type="text"
+            placeholder="City"
+            value="Evanston"
+          />
+        </Col>
+      </Row>
+      <Row className="input_row">
+        <Col
+          xs={6}
+          sm={{ span: 3, offset: 1 }}
+          md={{ span: 3, offset: 1 }}
+          lg={{ span: 3, offset: 1 }}
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            type="text"
+            placeholder="First Name"
+            value="USA"
+          />
+        </Col>
+        <Col
+          xs={6}
+          sm={{ span: 2, offset: 0 }}
+          md={{ span: 2, offset: 0 }}
+          lg={{ span: 2, offset: 0 }}
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            type="text"
+            placeholder="Last Name"
+            value="IL"
+          />
+        </Col>
+        <Col
+          xs={6}
+          sm={{ span: 3, offset: 0 }}
+          md={{ span: 3, offset: 0 }}
+          lg={{ span: 3, offset: 0 }}
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            type="text"
+            placeholder="First Name"
+            value="60201"
+          />
+        </Col>
+      </Row>
     </div>
   );
 }
@@ -207,6 +338,7 @@ function Step2(props) {
         name="lname"
         type="text"
         placeholder="Name on Card"
+        value="Batuhan Ergor"
       />
       <input
         className="form-control"
@@ -214,6 +346,7 @@ function Step2(props) {
         name="lname"
         type="text"
         placeholder="Card Number"
+        value="111222333444"
       />
       <input
         className="form-control"
@@ -221,6 +354,7 @@ function Step2(props) {
         name="lname"
         type="text"
         placeholder="Expiration Date"
+        value="12/21"
       />
       <input
         className="form-control"
@@ -228,6 +362,7 @@ function Step2(props) {
         name="lname"
         type="text"
         placeholder="CVV"
+        value="999"
       />
       <h4>Billing Address</h4>
       <label for="shipping">Same as Shipping Address</label>
