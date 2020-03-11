@@ -53,7 +53,7 @@ const ProductList = () => {
                     style={{
                       textAlign: "center",
                       fontFamily: "Roboto Condensed",
-                      marginTop: "10px",
+                      marginTop: "30px",
                       marginBottom: "20px"
                     }}
                   >
