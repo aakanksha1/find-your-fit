@@ -27,7 +27,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <Container className="product-container">
+    <Container className="product-container" style={{ margin: "0 2em 0 0" }}>
       <Row>
         <Filter
           className="Filters"
@@ -63,7 +63,11 @@ const ProductList = () => {
               ) : null}
               <div>
                 <p
-                  style={{ marginBottom: "-25px", marginLeft: "15px" }}
+                  style={{
+                    marginBottom: "-25px",
+                    marginLeft: "15px",
+                    marginTop: "15px"
+                  }}
                 >{`${products.length} results`}</p>
                 <Row className="product-list">
                   {products.map(product => (

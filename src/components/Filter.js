@@ -303,6 +303,7 @@ const Filter = ({ allProducts, setProducts }) => {
                   id="fyf"
                   className="filter-button btn-sm rounded-0"
                   variant="outline-dark"
+                  style={{ maxWidth: "100px" }}
                 >
                   Try Now: Find your Fit Quiz
                 </Button>
