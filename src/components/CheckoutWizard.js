@@ -119,76 +119,119 @@ function Step1(props) {
     return null;
   }
   return (
-    <div className="form-group">
-      <h2> Shipping Information</h2>
-      <h5> Contact Information</h5>
-      <input
-        className="form-control"
-        id="email"
-        name="email"
-        type="text"
-        placeholder="Enter email"
-        value={props.email}
-        onChange={props.handleChange}
-      />
-      <h5> Shipping Address</h5>
-      <input
-        className="form-control"
-        id="fname"
-        name="fname"
-        type="text"
-        placeholder="First Name"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Address"
-      />
 
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Apt. Suite, Etc"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="City"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Country"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="State"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Zip"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Phone Number"
-      />
+    <div className="form-group">
+      <Container class="shipping-info-container">
+        <h2> Shipping Information</h2>
+        <h5> Contact Information</h5>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} >
+            <input
+              className="form-control"
+              id="email"
+              name="email"
+              type="text"
+              placeholder="Enter email"
+              value={props.email}
+              onChange={props.handleChange}
+            />
+          </Col>
+        </Row>
+        <h5> Shipping Address</h5>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} >
+            <input
+              className="form-control"
+              id="fname"
+              name="fname"
+              type="text"
+              placeholder="First Name"
+            />
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} >
+            <input
+              className="form-control"
+              id="lname"
+              name="lname"
+              type="text"
+              placeholder="Last Name"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} >
+            <input
+              className="form-control"
+              id="address1"
+              name="address1"
+              type="text"
+              placeholder="Street"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} >
+            <input
+              className="form-control"
+              id="address2"
+              name="address2"
+              type="text"
+              placeholder="Apt. Suite, Etc"
+            />
+          </Col>
+        </Row>
+        <Row className="header1">
+          <Col xs={12} sm={12} md={12} lg={12} >
+            <input
+              className="form-control"
+              id="city"
+              name="city"
+              type="text"
+              placeholder="City"
+            />
+          </Col>
+        </Row>
+        <Row className="header1">
+          <Col xs={12} sm={12} md={4} lg={4} >
+            <input
+              className="form-control"
+              id="state"
+              name="state"
+              type="text"
+              placeholder="State"
+            />
+          </Col>
+          <Col xs={12} sm={12} md={4} lg={4} >
+            <input
+              className="form-control"
+              id="country"
+              name="country"
+              type="text"
+              placeholder="Country"
+            />
+          </Col>
+          <Col xs={12} sm={12} md={4} lg={4} >
+            <input
+              className="form-control"
+              id="zip"
+              name="zip"
+              type="text"
+              placeholder="Zip"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} >
+            <input
+              className="form-control"
+              id="pnumber"
+              name="pnumber"
+              type="text"
+              placeholder="Phone Number"
+            />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
@@ -199,51 +242,74 @@ function Step2(props) {
   }
   return (
     <div className="form-group">
-      <h2> Billing Information</h2>
-      <h4> Credit Card Information</h4>
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Name on Card"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Card Number"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="Expiration Date"
-      />
-      <input
-        className="form-control"
-        id="lname"
-        name="lname"
-        type="text"
-        placeholder="CVV"
-      />
-      <h4>Billing Address</h4>
-      <label for="shipping">Same as Shipping Address</label>
-      <input
-        className="form-control"
-        id="shipping"
-        name="lname"
-        type="checkbox"
-      ></input>
-      <label for="billing">Enter New Address </label>
-      <input
-        className="form-control"
-        id="shipping"
-        name="lname"
-        type="checkbox"
-      ></input>
+      <Container class="shipping-info-container">
+        <h2> Billing Information</h2>
+        <h4> Credit Card Information</h4>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} >
+            <input
+              className="form-control"
+              id="ccname"
+              name="ccname"
+              type="text"
+              placeholder="Name on Card"
+            />
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} >
+
+            <input
+              className="form-control"
+              id="ccnumber"
+              name="ccnumber"
+              type="text"
+              placeholder="Card Number"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} >
+            <input
+              className="form-control"
+              id="edate"
+              name="edate"
+              type="text"
+              placeholder="Expiration Date"
+            />
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} >
+
+            <input
+              className="form-control"
+              id="cvv"
+              name="cvv"
+              type="text"
+              placeholder="CVV"
+            />
+          </Col>
+        </Row>
+        <h4>Billing Address</h4>
+        <Row>
+          <Col xs={6} sm={6} md={5} lg={3} >
+            <label for="shipping">Same as Shipping Address</label>
+            <input
+              className="form-control"
+              id="shipping"
+              name="lname"
+              type="checkbox"
+            ></input>
+          </Col>
+          <Col xs={6} sm={6} md={3} lg={3} >
+
+            <label for="billing">Enter New Address </label>
+            <input
+              className="form-control"
+              id="shipping"
+              name="lname"
+              type="checkbox"
+            ></input>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
