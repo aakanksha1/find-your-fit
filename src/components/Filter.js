@@ -315,6 +315,7 @@ const Filter = ({ allProducts, setProducts }) => {
                     id="fyf"
                     className="filter-button btn-sm rounded-0"
                     variant="outline-dark"
+                    style={{ maxWidth: "110px" }}
                   >
                     Try a different suggestion!
                   </Button>
@@ -323,6 +324,7 @@ const Filter = ({ allProducts, setProducts }) => {
                   id="fyf"
                   className="filter-button btn-sm rounded-0"
                   variant="outline-dark"
+                  style={{ maxWidth: "110px" }}
                   onClick={handleFYF}
                 >
                   See results of customized items
