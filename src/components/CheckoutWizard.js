@@ -18,7 +18,6 @@ class MasterForm extends React.Component {
     };
   }
 
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -41,7 +40,6 @@ class MasterForm extends React.Component {
     this.setState({
       currentStep: currentStep
     });
-
   };
 
   _prev = () => {
@@ -62,23 +60,27 @@ class MasterForm extends React.Component {
         <Container>
           <span class="previous-wrapper">
             <Row>
-
               <Col xs={12} sm={12} md={10} lg={10}>
                 <Row>
-                  <Col xs={12}
+                  <Col
+                    xs={12}
                     sm={12}
                     md={{ span: 4, offset: 1 }}
-                    lg={{ span: 4, offset: 1 }}>
-                    <Button class="previous" variant="secondary" type="button" onClick={this._prev}>
+                    lg={{ span: 4, offset: 1 }}
+                  >
+                    <Button
+                      class="previous"
+                      variant="secondary"
+                      type="button"
+                      onClick={this._prev}
+                    >
                       Previous
-          </Button>
+                    </Button>
                   </Col>
                 </Row>
               </Col>
-              <Col ></Col>
+              <Col></Col>
             </Row>
-
-
           </span>
         </Container>
       );
@@ -91,13 +93,20 @@ class MasterForm extends React.Component {
       return (
         <span>
           <br></br>
-          <Col class="next"
+          <Col
+            class="next"
             xs={{ span: 12, offset: 1 }}
             sm={12}
             md={{ span: 7, offset: 5 }}
             lg={{ span: 7, offset: 5 }}
           >
-            <Button variant="dark" type="button" size="lg" href="/">
+            <Button
+              variant="dark"
+              type="button"
+              size="md"
+              href="/"
+              style={{ marginLeft: "55px" }}
+            >
               Back to Home Page
             </Button>
           </Col>
@@ -113,25 +122,28 @@ class MasterForm extends React.Component {
       return (
         <Container>
           <span class="next-wrapper">
-
             <Row>
-
               <Col xs={12} sm={12} md={10} lg={10}>
                 <Row>
-                  <Col xs={12}
+                  <Col
+                    xs={12}
                     sm={12}
                     md={{ span: 4, offset: 8 }}
-                    lg={{ span: 4, offset: 8 }}>
-                    <Button class="next" variant="dark" type="button" onClick={this._next}>
+                    lg={{ span: 4, offset: 8 }}
+                  >
+                    <Button
+                      class="next"
+                      variant="dark"
+                      type="button"
+                      onClick={this._next}
+                    >
                       Next
                     </Button>
                   </Col>
                 </Row>
               </Col>
-              <Col ></Col>
+              <Col></Col>
             </Row>
-
-
           </span>
         </Container>
       );
@@ -173,7 +185,6 @@ class MasterForm extends React.Component {
 }
 
 function Step1(props) {
-
   if (props.currentStep !== 1) {
     return null;
   }
@@ -187,7 +198,8 @@ function Step1(props) {
                 xs={12}
                 sm={12}
                 md={{ span: 6, offset: 1 }}
-                lg={{ span: 6, offset: 1 }}>
+                lg={{ span: 6, offset: 1 }}
+              >
                 <h2> SHIPPING</h2>
               </Col>
             </Row>
@@ -250,7 +262,8 @@ function Step1(props) {
               </Col>
             </Row>
             <Row className="input_row">
-              <Col mb-3
+              <Col
+                mb-3
                 xs={12}
                 sm={12}
                 md={{ span: 4, offset: 1 }}
@@ -388,8 +401,8 @@ function Step1(props) {
             </div> */}
           </Col>
         </Row>
-      </Container >
-    </div >
+      </Container>
+    </div>
   );
 }
 
