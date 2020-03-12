@@ -16,13 +16,15 @@ const Filter = ({ allProducts, setProducts }) => {
   const { state } = useLocation();
 
   const handleFYF = () => {
-    const FYFProducts = allProducts.filter(product => {
-      const genderMatch = product.gender === FYFFilter.gender;
-      const activityMatch = product.activity.filter(act =>
-        FYFFilter.activities.includes(act)
-      ).length;
-      return genderMatch && activityMatch;
-    });
+    const FYFProducts = allProducts
+      .filter(product => {
+        const genderMatch = product.gender === FYFFilter.gender;
+        const activityMatch = product.activity.filter(act =>
+          FYFFilter.activities.includes(act)
+        ).length;
+        return genderMatch && activityMatch;
+      })
+      .slice(0, 3);
     setProducts(FYFProducts);
   };
 
