@@ -76,7 +76,7 @@ const CheckoutPage = () => {
                   />
                 </Card>
               </Col>
-              <Col md={6}>
+              <Col md={6} style={{ marginTop: "15px" }}>
                 <h4 className="brand">{state.checkoutProduct.brand}</h4>
                 <h6>{state.checkoutProduct.name}</h6>
                 <p className="info-price">
@@ -98,7 +98,10 @@ const CheckoutPage = () => {
             <hr className="horizontal-rule"></hr>
           </Col>
         </Row>
-        <Row className="total-price">
+        <Row
+          className="total-price"
+          style={{ justifyContent: "center", textAlign: "center" }}
+        >
           <Col
             xs={{ span: 3 }}
             sm={{ span: 3, offset: 2 }}
