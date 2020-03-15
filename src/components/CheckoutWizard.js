@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Container, Card, Form, Button } from "react-bootstrap";
-import { useParams, Link, useLocation } from "react-router-dom";
-import ReactDOM from "react-dom";
+import React from "react";
+import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import CheckoutPage from "./CheckoutPage";
 
 import "../styles/CheckoutWizard.scss";

@@ -30,6 +30,7 @@ const ProductPage = () => {
       .catch(error => {
         console.log("Error getting documents: ", error);
       });
+      // eslint-disable-next-line
   }, []);
 
   return (

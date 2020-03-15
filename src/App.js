@@ -5,7 +5,6 @@ import Banner from "./components/Banner";
 import ProductList from "./components/ProductList";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
-import CheckoutPage from "./components/CheckoutPage";
 import FYFPage from "./components/FYFPage";
 import MasterForm from "./components/CheckoutWizard";
 

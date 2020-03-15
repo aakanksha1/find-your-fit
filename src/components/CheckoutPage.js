@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Row, Col, Container, Card } from "react-bootstrap";
-import { useParams, Link, useLocation } from "react-router-dom";
-import ReactDOM from "react-dom";
-// import Filter from "./Filter";
+import { useLocation } from "react-router-dom";
 import "../styles/CheckoutPage.scss";
-// import ProductCard from "./ProductCard";
-
-import { db } from "../App";
 
 const CheckoutPage = () => {
-  // const { id } = useParams();
-  const [product, setProduct] = useState(null);
   const { state } = useLocation();
-  console.log(state.checkoutProduct);
 
   return (
     <Container>

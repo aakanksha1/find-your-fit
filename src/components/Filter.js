@@ -42,8 +42,10 @@ const Filter = ({ allProducts, setProducts }) => {
     if (state) {
       if (state.smartFiltered) handleFYF();
     }
+    // eslint-disable-next-line
   }, [FYFFilter, allProducts]);
 
+  // eslint-disable-next-line
   const sizeAvaliable = product => {
     console.log(product.colors);
     for (var color in product.colors) {
@@ -105,11 +107,6 @@ const Filter = ({ allProducts, setProducts }) => {
       holder = holder.filter(obj => obj.brand === brandFilter);
       setProducts(holder);
     }
-    // if (sizeFilter.length >= 1) {
-    //   let holder = allProducts.filter((product) => {
-    //     const product =
-    //   });
-    // }
   };
 
   return (
@@ -135,7 +132,7 @@ const Filter = ({ allProducts, setProducts }) => {
             <Panel className="filter-panel" header="Gender" key="6">
               {["Women", "Men"].map(gender => (
                 <div>
-                  <a
+                  <a href
                     className={genderFilter === gender ? "red" : null}
                     onClick={() => {
                       genderFilter === gender
@@ -153,7 +150,7 @@ const Filter = ({ allProducts, setProducts }) => {
               {["Adidas", "Athleta", "Lululemon", "Nike", "Under Armour"].map(
                 brand => (
                   <div>
-                    <a
+                    <a href
                       className={brandFilter === brand ? "red" : null}
                       onClick={() => {
                         brandFilter === brand
@@ -179,7 +176,7 @@ const Filter = ({ allProducts, setProducts }) => {
                     "Outerwear"
                   ].map(type => (
                     <div>
-                      <a
+                      <a href
                         className={apparelFilter === `T${type}` ? "red" : null}
                         onClick={() => {
                           apparelFilter === `T${type}`
@@ -197,7 +194,7 @@ const Filter = ({ allProducts, setProducts }) => {
                   <h6 className="filter-header">Bottoms</h6>
                   {["Base Layers", "Shorts", "Pants", "Leggings"].map(type => (
                     <div>
-                      <a
+                      <a href
                         className={apparelFilter === `B${type}` ? "red" : null}
                         onClick={() => {
                           apparelFilter === `B${type}`
@@ -215,7 +212,7 @@ const Filter = ({ allProducts, setProducts }) => {
             </Panel>
             <Panel className="filter-panel" header="Size" key="3">
               <div>
-                <a
+                <a href
                   className={sizeFilter === "XS" ? "red" : null}
                   onClick={() => {
                     sizeFilter === "XS"
@@ -227,7 +224,7 @@ const Filter = ({ allProducts, setProducts }) => {
                 </a>
               </div>
               <div>
-                <a
+                <a href
                   className={sizeFilter === "S" ? "red" : null}
                   onClick={() => {
                     sizeFilter === "S" ? setSizeFilter("") : setSizeFilter("S");
@@ -237,7 +234,7 @@ const Filter = ({ allProducts, setProducts }) => {
                 </a>
               </div>
               <div>
-                <a
+                <a href
                   className={sizeFilter === "M" ? "red" : null}
                   onClick={() => {
                     sizeFilter === "M" ? setSizeFilter("") : setSizeFilter("M");
@@ -247,7 +244,7 @@ const Filter = ({ allProducts, setProducts }) => {
                 </a>
               </div>
               <div>
-                <a
+                <a href
                   className={sizeFilter === "L" ? "red" : null}
                   onClick={() => {
                     sizeFilter === "L" ? setSizeFilter("") : setSizeFilter("L");
@@ -257,7 +254,7 @@ const Filter = ({ allProducts, setProducts }) => {
                 </a>
               </div>
               <div>
-                <a
+                <a href
                   className={sizeFilter === "XL" ? "red" : null}
                   onClick={() => {
                     sizeFilter === "XL"

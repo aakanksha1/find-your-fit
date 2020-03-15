@@ -56,6 +56,7 @@ const FYFPage = () => {
   const handleSubmit = e => {
     e.preventDefault();
     let allActivities = [...activities, ...eventActivities, ...imageActivities];
+    
     // Remove duplicate activities
     allActivities = allActivities.filter(
       (activity, i) => allActivities.indexOf(activity) === i
