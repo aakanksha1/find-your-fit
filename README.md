@@ -3,10 +3,33 @@
 Find your fit is a mobile-friendly website where you can try out high-performance workout clothes.
 It also provides smart suggestions to individuals based on our questionnaire.
 
+## Firebase
+Create firebase project, firestore database and connect to app by following instructions.
+https://firebase.google.com/docs/web/setup
+
+Import firebase and initialize config
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+// Fill in your config info from the project overview tab in firebase console.
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 ## Hosted Website
 
 We are currently hosting this project through firebase.
 https://rinserepeat-1292e.firebaseapp.com/
+
 
 ## Database
 
