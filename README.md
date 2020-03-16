@@ -1,23 +1,34 @@
 ## Find Your Fit.
-Find your fit is a mobile-friendly website where you can try out high-performance workout clothes. 
+
+Find your fit is a mobile-friendly website where you can try out high-performance workout clothes.
 It also provides smart suggestions to individuals based on our questionnaire.
 
 ## Hosted Website
 
-We are currently hosting this project through firebase. 
-https://rinse-repeat.now.sh/
+We are currently hosting this project through firebase.
+https://rinserepeat-1292e.firebaseapp.com/
 
 ## Database
 
 We used firestore for our database.
 https://firebase.google.com/docs/firestore
 
-
-
 ## Available Scripts
 
 In the project directory, you can run:
 Make sure you do 'npm install' once you clone it into your local repo.
+
+## Environment variables
+
+To ensure that this repo works with your own Firebase project, add the following environment variables (taken from Firebase) in a .env file in the root directory:
+
+REACT_APP_API_KEY<br>
+REACT_APP_AUTH_DOMAIN<br>
+REACT_APP_DATABASE_URL<br>
+REACT_APP_PROJECT_ID<br>
+REACT_APP_STORAGE_BUCKET<br>
+REACT_APP_MESSAGING_SENDER_ID<br>
+REACT_APP_APP_ID<br>
 
 ### `npm start`
 
@@ -40,17 +51,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
+## Needs further development
 
-## Needs further development 
 - Functionality of adding multiple Items to the cart
 - Saving personal information via user authentication
-- System to update database inventory of items 
+- System to update database inventory of items
 - Partnerships with suppliers to provide inventory for trial system
-- Security for shipping & billing information 
+- Security for shipping & billing information
 - Revision of UX based on user testing
-- Functionality for shipping & payment information 
+- Functionality for shipping & payment information
 - UI needs to be completly responsive over mobile/web.
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
