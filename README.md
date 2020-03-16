@@ -13,11 +13,6 @@ https://rinserepeat-1292e.firebaseapp.com/
 We used firestore for our database.
 https://firebase.google.com/docs/firestore
 
-## Available Scripts
-
-In the project directory, you can run:
-Make sure you do 'npm install' once you clone it into your local repo.
-
 ## Environment variables
 
 To ensure that this repo works with your own Firebase project, add the following environment variables (taken from Firebase) in a .env file in the root directory:
@@ -29,6 +24,11 @@ REACT_APP_PROJECT_ID<br>
 REACT_APP_STORAGE_BUCKET<br>
 REACT_APP_MESSAGING_SENDER_ID<br>
 REACT_APP_APP_ID<br>
+
+## Available Scripts
+
+In the project directory, you can run:
+Make sure you do 'npm install' once you clone it into your local repo.
 
 ### `npm start`
 
