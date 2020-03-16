@@ -7,23 +7,18 @@ It also provides smart suggestions to individuals based on our questionnaire.
 Create firebase project, firestore database and connect to app by following instructions.
 https://firebase.google.com/docs/web/setup
 
-Import firebase and initialize config
-import firebase from 'firebase/app';
-import 'firebase/database';
 
-// Fill in your config info from the project overview tab in firebase console.
-const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
-};
+### Environment variables
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+To ensure that this repo works with your own Firebase project, add the following environment variables (taken from Firebase) in a .env file in the root directory:
+
+REACT_APP_API_KEY<br>
+REACT_APP_AUTH_DOMAIN<br>
+REACT_APP_DATABASE_URL<br>
+REACT_APP_PROJECT_ID<br>
+REACT_APP_STORAGE_BUCKET<br>
+REACT_APP_MESSAGING_SENDER_ID<br>
+REACT_APP_APP_ID<br>
 
 ## Hosted Website
 
@@ -36,17 +31,7 @@ https://rinserepeat-1292e.firebaseapp.com/
 We used firestore for our database.
 https://firebase.google.com/docs/firestore
 
-## Environment variables
 
-To ensure that this repo works with your own Firebase project, add the following environment variables (taken from Firebase) in a .env file in the root directory:
-
-REACT_APP_API_KEY<br>
-REACT_APP_AUTH_DOMAIN<br>
-REACT_APP_DATABASE_URL<br>
-REACT_APP_PROJECT_ID<br>
-REACT_APP_STORAGE_BUCKET<br>
-REACT_APP_MESSAGING_SENDER_ID<br>
-REACT_APP_APP_ID<br>
 
 ## Available Scripts
 
