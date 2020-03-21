@@ -20,11 +20,6 @@ REACT_APP_STORAGE_BUCKET<br>
 REACT_APP_MESSAGING_SENDER_ID<br>
 REACT_APP_APP_ID<br>
 
-## Hosted Website
-
-We are currently hosting this project through firebase.
-https://rinserepeat-1292e.firebaseapp.com/
-
 
 ## Database
 
